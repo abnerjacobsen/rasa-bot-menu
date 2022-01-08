@@ -1,0 +1,42 @@
+version: "2.0"
+
+stories:
+
+- story: escolha a opção com caminho feliz
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_option
+  - action: action_handle_options
+
+- story: escolha a opção com caminho direto
+  steps:
+  - intent: give_option
+  - action: action_handle_options
+
+- story: caminho feliz
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: caminho triste 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: caminho triste 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye

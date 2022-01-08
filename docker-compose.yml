@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+
+  rasa:
+    build: 
+      context: core
+    ports: 
+      - "5005:5005"
+    volumes:
+      - ${PWD}/core:/app
+
+  action_server:
+    build: 
+      context: actions
+    volumes:
+      - ${PWD}/actions:/app/actions
+    ports:
+      - "5055:5055"  
+
+  widget:
+    build:
+      context: widget
+    ports:
+      - "2015:80"
+    volumes:
+      - ${PWD}/widget/src:/usr/share/caddy
+

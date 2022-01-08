@@ -1,0 +1,18 @@
+version: "2.0"
+
+rules:
+
+- rule: Lida com a opção sempre que o usuário informar
+  steps:
+  - intent: give_option
+  - action: action_handle_options
+
+- rule: Diga adeus sempre que o usuário se despedir
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Diga 'Eu sou um bot' sempre que o usuário questionar
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

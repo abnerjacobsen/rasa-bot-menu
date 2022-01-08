@@ -1,0 +1,93 @@
+version: "2.0"
+
+nlu:
+# See https://rasa.com/docs/rasa/nlu-training-data/#regular-expressions-for-entity-extraction
+# for more information
+- regex: option
+  examples: |
+    - \d{1,2}
+- intent: give_option
+  examples: |
+    - [0](option)
+    - [1](option)
+    - [2](option)
+    - [3](option)
+    - [4](option)
+    - [5](option)
+    - [6](option)
+    - [7](option)
+    - [8](option)
+    - [9](option)
+    - [10](option)
+- intent: greet
+  examples: |
+    - ei
+    - Olá
+    - Oi
+    - bom dia
+    - boa noite
+    - vamos lá
+    - ei cara
+    - boa tarde
+
+- intent: goodbye
+  examples: |
+    - adeus
+    - te vejo mais tarde
+    - tchau
+    - tenha um bom dia
+    - vejo você por aí
+    - tchau tchau
+    - até logo
+
+- intent: affirm
+  examples: |
+    - sim
+    - claro
+    - Isso soa bem
+    - correto
+
+- intent: deny
+  examples: |
+    - não
+    - nunca
+    - acho que não
+    - não gosto disso
+    - de jeito nenhum
+    - Na verdade não
+
+- intent: mood_great
+  examples: |
+    - perfeito
+    - excelente
+    - maravilhoso
+    - estou me sentindo muito bem
+    - estou ótimo
+    - eu sou incrível
+    - super animado
+    - extremamente bom
+    - tão perfeito
+    - tão bom
+
+- intent: mood_unhappy
+  examples: |
+    - meu dia foi horrível
+    - Estou triste
+    - Não me sinto muito bem
+    - estou desapontado
+    - super triste
+    - eu estou tão triste
+    - triste
+    - muito triste
+    - infeliz
+    - não é bom
+    - não muito bom
+    - extremamente triste
+    - tão triste
+
+- intent: bot_challenge
+  examples: |
+    - você é um robô ?
+    - você é um humano ?
+    - estou falando com um bot ?
+    - estou falando com um humano ?

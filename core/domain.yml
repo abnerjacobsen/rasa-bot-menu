@@ -1,0 +1,63 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - give_option
+
+actions:
+- action_handle_options
+- action_handle_unidades
+- action_handle_agendamento
+- action_handle_agendamento_info
+- action_handle_cancelamento
+- action_handle_encerrar
+- action_handle_onnx
+- action_handle_mxnet
+- action_handle_caffe
+
+entities:
+- option
+
+slots:
+  option:
+    type: text
+  submenu:
+    type: text
+    initial_value: "main"
+  suboption:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Olá! Sou o NumMenu, seu bot de menu baseado em números.\n\nDigite o número de uma opção de atendimento:\n
+  1. Informações sobre unidades 🔥\n
+  2. Agendamento 🌊\n
+  3. Informações de agendamento ☕️\n
+  4. Cancelamento 🧠\n
+  5. Encerrar atendimento"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
